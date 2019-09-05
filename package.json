@@ -10,6 +10,14 @@
   "scripts": {
     "test": "jest"
   },
+  "files": [
+    "bin",
+    "default",
+    "index.js",
+    "LICENSE",
+    "readme.md",
+    "utils"
+  ],
   "devDependencies": {
     "eslint": "^6.3.0",
     "eslint-config-prettier": "^6.2.0",
