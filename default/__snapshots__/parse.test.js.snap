@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`1 secret 1`] = `
+Array [
+  Object {
+    "field": "secret",
+    "id": "version-test:secret@2",
+    "secret": "version-test",
+    "version": "2",
+  },
+  Object {
+    "field": "secret2",
+    "id": "version-test:secret2@3",
+    "secret": "version-test",
+    "version": "3",
+  },
+]
+`;
+
+exports[`empty string 1`] = `Array []`;
+
+exports[`multiple and duplicate secrets, should deduplicate 1`] = `
+Array [
+  Object {
+    "field": "secret",
+    "id": "version-test:secret@2",
+    "secret": "version-test",
+    "version": "2",
+  },
+  Object {
+    "field": "secret2",
+    "id": "version-test:secret2@3",
+    "secret": "version-test",
+    "version": "3",
+  },
+]
+`;
+
+exports[`multiple secrets 1`] = `
+Array [
+  Object {
+    "field": "secret",
+    "id": "version-test:secret@2",
+    "secret": "version-test",
+    "version": "2",
+  },
+  Object {
+    "field": "secret2",
+    "id": "version-test:secret2@3",
+    "secret": "version-test",
+    "version": "3",
+  },
+]
+`;
+
+exports[`no secrets 1`] = `Array []`;
+
+exports[`no spaces 1`] = `
+Array [
+  Object {
+    "field": "secret",
+    "id": "version-test:secret@2",
+    "secret": "version-test",
+    "version": "2",
+  },
+  Object {
+    "field": "secret2",
+    "id": "version-test:secret2@3",
+    "secret": "version-test",
+    "version": "3",
+  },
+]
+`;
