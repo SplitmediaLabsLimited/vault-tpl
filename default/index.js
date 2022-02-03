@@ -36,15 +36,16 @@ async function writeOutputYaml(filename, data, { write }) {
   fs.writeFileSync(filename, output);
 }
 
-module.exports = async function(args, options) {
+module.exports = async function(file, options) {
   await require('../utils/validate')();
+
   const parse = require('./parse');
   const { fetchSecrets } = require('./fetch-secrets');
   const { replaceSecrets } = require('./replace-secrets');
   const { replaceSecretsYaml } = require('./replace-secrets-yaml');
 
-  const { file } = args;
   const { write } = options;
+
   const { name, ext } = path.parse(file);
   const outputFilename = getOutput({ name, ext }, options.output);
   const raw = await readFile(file);
