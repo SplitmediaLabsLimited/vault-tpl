@@ -1,13 +1,9 @@
-const prog = require('caporal');
-const { version, description } = require('./package.json');
+const prog = require('commander');
 
 prog
-  .version(version)
-  .description(description)
-
-  .argument('<file>', 'File with secrets to parse')
   .option('--write', 'Writes output file')
   .option('--output <file>', 'Output file name, if not provided, defaults to <filename>-output.<ext>')
+  .argument('<file>', 'File with secrets to parse')
   .action(require('./default'));
 
-prog.parse(process.argv);
+prog.parse();
