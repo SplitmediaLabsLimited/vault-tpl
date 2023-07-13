@@ -52,17 +52,9 @@ module.exports = async function(file, options) {
   const matches = parse(raw);
   const secrets = await fetchSecrets(matches);
 
-  if (ext === '.yaml' || ext === '.yml') {
-    const parsed = YAML.safeLoad(raw);
-    const output = replaceSecretsYaml(parsed, secrets);
-    await writeOutputYaml(outputFilename, output, {
-      write,
-    });
-  } else {
-    const output = replaceSecrets(raw, secrets);
+  const output = replaceSecrets(raw, secrets);
 
-    await writeOutput(outputFilename, output, {
-      write,
-    });
-  }
+  await writeOutput(outputFilename, output, {
+    write,
+  });
 };
